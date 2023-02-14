@@ -1,6 +1,9 @@
 /*poder registrar un numero de usuarios x   con y cantidad de datos en un gimnasio
 la cantidad de usuarios a registrar debe ser preguntada al principio, al final del
-programa debe de imprimirse el nombre de los usuarios registradas exitosamente  */
+programa debe de imprimirse el nombre de los usuarios registradas exitosamente  
+autor: sofi c
+fecha: 03/02/2023
+*/
 
 #include <iostream>
 using namespace std;
