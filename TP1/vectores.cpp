@@ -1,7 +1,7 @@
-/******************************************************************************
-8/02/2023 USANDO VECTORES Y COMO SE USAN
-autor:sofia carvajal 
-*******************************************************************************/
+//autor:sofia carvajal 
+//fecha:8/02/2023
+//USANDO VECTORES Y SUS FUNCIONES
+
 #include <iostream>
 #include <vector>
 
