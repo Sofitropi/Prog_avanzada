@@ -1,18 +1,18 @@
-/********************************************
-  fecha: 3-2-2023
-  Autor: SOFI
-  Tema:Biblioteca "fstream "
-Problema
-Se necesita crear una aplicacion que solicite datos de usuarios' para posteriormente almacenarlos
-en un fichero.
-  El almacenamiento ha de ser cada dato en una linea.
-  No se desea o permite que se almacene mas de una palabra por linea(No espacios en blanco).
-Solucion:
-*Se hace uso de la biblioteca "fstream"
-*Se crea un TDA para la coleccion de datos.
-*Se almacena datos del TDA en el fichero.
-*Finalmente, se leen los datos del fichero y se presentan por pantalla.
-************/
+//fecha: 3-2-2023
+// Autor: SOFI
+// USANDO: Biblioteca "fstream "
+
+//Problema
+//Se necesita crear una aplicacion que solicite datos de usuarios' para posteriormente almacenarlos
+//en un fichero.
+//  El almacenamiento ha de ser cada dato en una linea.
+//  No se desea o permite que se almacene mas de una palabra por linea(No espacios en blanco).
+//Solucion:
+//*Se hace uso de la biblioteca "fstream"
+//*Se crea un TDA para la coleccion de datos.
+//*Se almacena datos del TDA en el fichero.
+//*Finalmente, se leen los datos del fichero y se presentan por pantalla.
+
 #include <iostream>
 #include <fstream>
 
