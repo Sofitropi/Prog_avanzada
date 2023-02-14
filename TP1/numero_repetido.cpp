@@ -1,4 +1,7 @@
-// crear un programa que retorne el numero mas repetido de un arreglo y cuantas veces se repitio//
+// autores: juan cortez, annika carl y sofia carvajal
+// fecha:31-01-2023
+
+//crear un programa que retorne el numero mas repetido de un arreglo y cuantas veces se repitio//
 
 #include <iostream>
 
