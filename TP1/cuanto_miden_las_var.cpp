@@ -1,8 +1,8 @@
-/******************************************************************************
-para saber cuanto mide cada var
-autor:sofi c
-fecha :10/02/2023
-*******************************************************************************/
+
+//autor:sofi c
+//fecha :10/02/2023
+//para saber cuanto mide cada var
+
 #include <iostream>
 #include <cmath>
 
