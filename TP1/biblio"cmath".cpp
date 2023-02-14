@@ -1,10 +1,9 @@
-/******************************************************************************
 
-USANDO FUNCIONES (raiz) DE LA BIBLIOTECA CMATH
+//autor:sofia carvajal 
+//fecha: 08-02-23
+    
+//USANDO FUNCIONES (raiz) DE LA BIBLIOTECA CMATH
 
-autor:sofia carvajal 
-fecha: 08-02-23
-*******************************************************************************/
 #include <iostream>
 #include <cmath>
 
