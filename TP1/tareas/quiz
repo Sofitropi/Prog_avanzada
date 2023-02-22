@@ -1,0 +1,92 @@
+//AUTOR:SOFIA CARVAJAL
+TEMA:QUIZ
+FECHA: 22/02/2023//
+
+1. #include <iostream>
+
+using namespace std;
+
+int main()
+{
+    /*se crea el arreglo*/
+   int arreglo[]={10,20,30,45,55}, *punteroarr;
+   /*se crea un puntero con la posicion de memeoria del arreglo*/
+   punteroarr= &arreglo[0];
+   /*se  crea un for para recorrer el arreglo e imprimir el alor de cada posiscion de memoria*/
+   for (int i=0;i<5;i++){
+/*se imprime el valor en esa posicion de memoria*/
+       cout<<*(punteroarr+i)<<endl;
+
+   }
+
+    return 0;
+}
+
+2. #include <iostream>
+
+using namespace std;
+
+int main()
+{
+    
+    /*crear 2 arreglos con las vocales*/
+    char arreglo1[]={'a','e','i','o','u'}, *puntero1;
+    char arreglo2[]={'a','e','i','e','u'}, *puntero2;
+    /*crear un contador para saber cuantas letras se repiten */
+    int contador=0;
+     /*igualar el puntero a la primera posicion*/
+    puntero1= &arreglo1[0];
+    puntero2= &arreglo2[0];
+     /*crea un for() para recorrer el arreglo*/
+    for(int i=0;i<5;i++){
+         /*inicializar el contador en 0 para que no se acumule */
+        contador=1;
+         /*crear otro for para recorrer el segundo arreglo */
+        for(int j=0;j<5;j++){
+             /*comparar si la misma letra se repite  */
+        if(*(puntero1+i)==*(puntero2+j)){
+             /*si cumple el parametro anterior el contador se acumulara*/
+        contador++;
+         /*imprimir la letra */
+        cout<<"la letra "<<*(puntero1+i)<<endl;
+          
+        }
+        
+        }
+        /*imprimir las veces que se repite*/
+        cout<<"se repite "<<contador<<" veces"<<endl;
+    }
+
+   
+ contador=0;
+   
+    return 0;
+}
+
+3.#include <iostream>
+
+using namespace std;
+
+int main()
+{
+  int vert;
+  /*la matriz es cuadrada entonces el mismo tamano de x va a ser el de y, se pide el tamano*/
+  cout<<"de que tamano quiere la matriz: "<<endl;
+cin >> vert;
+/*se crea el espacio de memoria con el "new"*/
+int **arreglo = new int*[vert];
+/*se va a comparar poner los valores en la nueva matriz new*/
+for (int i = 0; i < vert; i++) {
+    arreglo[i] = new int[vert];
+}
+/*se llena la matriz */
+for (int i = 0; i < vert; i++) {
+    for (int j = 0; j < vert; j++) {
+        arreglo[i][j] = 0;
+        cout<<arreglo[i][j];
+    }
+   cout<<endl;
+}
+
+    return 0;
+}
