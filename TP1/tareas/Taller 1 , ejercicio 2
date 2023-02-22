@@ -1,0 +1,99 @@
+/******************************************************************************
+Autor: Sofia Carvajal 
+Fecha: 21/02/2023
+
+Ejercicios 02:
+Se desea capturar los datos de los clientes para ser impreso en la factura. Se requiere
+crear una estructura de datos, que encapsule los datos de los usuarios. Se requiere que
+el uso de la estructura sea a través de punteros. Se requiere imprimir las facturas en
+un fichero de texto. 
+
+*******************************************************************************/
+#include <iostream>
+#include <fstream>
+#include <stdlib.h>
+#include <string.h>
+
+using namespace std;
+ 
+ /*se crea la estructura con los datos del cliente*/
+struct cliente{
+    string nombre;
+    string apellido;
+    string fechadecompra;
+    int numerodetel;
+};
+
+/*se ponen los contratos de las funciones que vamos a usar*/
+void abrirfactura (cliente Clientes[],int clientes);
+void lectura();
+
+int main()
+{
+    int clientes;
+    cliente Clientes[50]; /* creo el arreglo del tipo de estructura que declare anteriormente*/
+    
+    return 0;
+}
+
+void abrirfactura (cliente Clientes[],int clientes){
+    
+   // Clientes *cli;     /*creo un puntero*/
+   // cli = &Clientes[0];  /*para guardar la posicion de memoria*/
+    
+    ofstream archivo;
+    archivo.open ("facturacliente.txt",ios::out|ios::app); /*se crea el archivo de la factura del cliente, el app anade sin borrar y el out permite escribir 
+    en el archivo*/
+    
+    cout<<"cuantas facturas va a generar?"<<endl;
+    cin>>clientes;
+    
+    if(archivo.fail()){
+        cout<< "el archivo no se puede abrir"<<endl;  /* crear el aviso para que el usuario vea si existe algun error 
+        al abrir el archivo*/
+    }
+    
+    else{
+    archivo << "FACTURA" <<endl;
+
+        for (int i=0; i<clientes;i++){      //ingreso de datos de los usuarios que quiera registrar
+            cout<<"\nNombre del usuario: ";
+            cin>> Clientes[i].nombre;       
+            cout<<"apellido: ";
+            cin>>Clientes[i].apellido;
+            cout<<"Fecha de la compra: ";
+            cin>>Clientes[i].fechadecompra;
+            cout<<"numero de telefono: ";
+            cin>>Clientes[i].numerodetel;
+
+            archivo << "\nUsuario: "<< endl;
+            archivo << "Nombre: " <<Clientes[i].nombre<<endl;
+            archivo << "Apellido: " <<Clientes[i].apellido<<endl;
+            archivo << "Fecha: " <<Clientes[i].fechadecompra<<endl;
+            archivo << "Numero de Telefono: " <<Clientes[i].numerodetel<<endl;
+
+        }
+    }
+
+    archivo.close();
+
+}
+
+void lectura(){
+    ifstream archivo;
+    string contenido;
+
+    archivo.open("facturacliente.txt", ios::in);/*abriendo el archivo en modo lectura*/
+
+    if(archivo.fail()){
+        cout<<"no es posible abrir el archivo";
+        exit(1);
+    }
+
+    while (!archivo.eof()){
+        getline(archivo, contenido);
+        cout<<contenido<<endl;
+    }
+    archivo.close();
+
+}
