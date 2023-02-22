@@ -47,12 +47,12 @@ int main()
         if(*(puntero1+i)==*(puntero2+j)){
              /*si cumple el parametro anterior el contador se acumulara*/
         contador++;
-         /*imprimir la letra */
-        cout<<"la letra "<<*(puntero1+i)<<endl;
-          
+     
         }
         
         }
+         /*imprimir la letra */
+        cout<<"la letra "<<*(puntero1+i)<<endl;
         /*imprimir las veces que se repite*/
         cout<<"se repite "<<contador<<" veces"<<endl;
     }
