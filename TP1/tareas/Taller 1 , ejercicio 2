@@ -38,8 +38,8 @@ int main()
 
 void abrirfactura (cliente Clientes[],int clientes){
     
-   // Clientes *cli;     /*creo un puntero*/
-   // cli = &Clientes[0];  /*para guardar la posicion de memoria*/
+   Clientes *cli;     /*creo un puntero*/
+   cli = &Clientes[0];  /*para guardar la posicion de memoria*/
     
     ofstream archivo;
     archivo.open ("facturacliente.txt",ios::out|ios::app); /*se crea el archivo de la factura del cliente, el app anade sin borrar y el out permite escribir 
