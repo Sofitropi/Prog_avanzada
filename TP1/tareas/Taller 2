@@ -75,10 +75,9 @@ void randoms(int conjunto[], int n){
 }
 
 // funcion histograma//
-
 void histograma(int conjunto[], int n){
 int arreglo[10];
-/*
+/*se llena un arrelo con cada valor que se repita */
 for (int i=0;i<n;i++){
     if(conjunto[i]==1){
         arreglo[0]++;
@@ -110,15 +109,20 @@ for (int i=0;i<n;i++){
      else if(conjunto[i]==10){
         arreglo[9]++;
     }
-   
-}*/
-for(int j=0;j<10;j++){
-    arreglo[j]=0;
-    cout<<arreglo[j]<<endl;
-}
-for(int i=0;i<n;i++){
+    /*se imprime el nuevo arreglo a modo histograma*/
+  cout << "Histograma:\n";
     
-    cout<<conjunto[i]<<endl;
+    for (int i = 0; i < 10; i++) {
+        cout << i << ": ";
+        
+        for (int j = 0; j < arreglo[i]; j++) {
+            cout << "*";
+        }
+        
+        cout<<endl;
+    }
 }
-}
-    
+
+
+
+
