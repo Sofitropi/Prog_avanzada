@@ -1,0 +1,46 @@
+// memoria dinamica clase //
+// autor:sofia carvajal //
+// memoria dinamica reserva un espacio de memoria que ni se con que voy a llenar ni cuando //
+// solo se reserva un espacio limitado y no puede ser tan grande porque o si no no queda memoria para otras cosas //
+// haciendo esto no se efecta el rendimiento global //
+// con esto buscamos minimizar el desperdicio y aumentar el rendimiento//
+//pila: el ultimo que entra el ultimo que sale 
+// heap: es la memoria no utilizada 
+// OPERADORES:
+//NEW crea la memoria, variable, o arreglo y va a apuntar al primer dato para ir llenandolo //
+//tipo_de_dato (int,strcut,float) *pointer;
+//pointer= new tipo_de_dato;  (se reserva la cantidad de bytes del tipo de la variable );
+// int *puntero;
+//puntero= new int 
+//. float *puntero;
+// puntero= new float;
+/*nombre_del_struct *puntero;
+puntero=nombre_del_struct[];
+
+delete puntero; *
+
+//devulevo el espacio al computador//
+//ejemplo para llenaf un arreglo con memoria dinamica//
+/*int num(){
+int num;
+  cout<<"ingrese los elementos del arreglo"<< endl;
+  cin>> num;
+  int*ptr;
+  ptr= new int [num];  // se guarda la memoria//
+  cout<< "llenar el arreglo"<< endl; // solo tenemos la memoria por eso ahora lo llenamos/ 
+  for(int i = 0;i<n;i++){
+    cout<< "elemento"<< endl;
+    cin>> ptr[i]; 
+  } 
+
+  // se imprime el arreglo 
+cout<< "el vector lleno seria" <<endl;
+  for (int i=0; i<n;i++){
+cout<< "elementos"<<ptr[i]<<endl;
+    
+  }
+
+delete[] ptr;
+  return 0;
+  
+}*/
