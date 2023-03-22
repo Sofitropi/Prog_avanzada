@@ -1,0 +1,31 @@
+/******************************************************************************
+prog orientada a objetos repasar 
+
+*******************************************************************************/
+#include <iostream>
+using namespace std;
+class incognito{
+    public:
+    int funcion(int num1,int num2){
+        return num1+num2;
+    }
+    int funcion(int num1, int num2, int num3){
+        
+        return num1+num2+num3;
+    }
+    };
+    
+
+int main()
+{
+  incognito objeto;
+cout<< objeto.funcion(23,10,2)<<endl;
+cout<< objeto.funcion(15,2)<<endl;
+
+     
+    return 0;
+}
+
+
+
+    
