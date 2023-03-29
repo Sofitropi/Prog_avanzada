@@ -1,0 +1,10 @@
+https://www.slideserve.com/tale/poo-en-c
+
+
+class Auto{
+//datos miembros
+char nombre[];
+
+
+
+}
