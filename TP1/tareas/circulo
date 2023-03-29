@@ -1,0 +1,74 @@
+/******************************************************************************
+
+Welcome to GDB Online.
+GDB online is an online compiler and debugger tool for C, C++, Python, Java, PHP, Ruby, Perl,
+C#, OCaml, VB, Swift, Pascal, Fortran, Haskell, Objective-C, Assembly, HTML, CSS, JS, SQLite, Prolog.
+Code, Compile, Run and Debug online from anywhere in world.
+
+*******************************************************************************/
+#include <iostream>
+
+using namespace std;
+
+class circulo{
+    int radio;
+ //el constructor le "asigna" el radio de la class, inicializa la varible para las funciones de abajo//
+    public:
+    circulo ( int radio){
+    this->radio=radio;
+    }
+    
+    int areac(){
+        int a;
+        a= (radio*radio)*3.1416;
+        return a;
+    }
+    int perimetro(){
+        int p;
+        p= 2*3.14*radio;
+        return p;
+    }
+    int diametro (){
+        int d;
+        d=radio*2;
+        return d; 
+    }
+    
+};
+
+class Triangulo{
+    
+    
+    
+}
+
+
+
+int main()
+{
+    int n; //variable para entrar al menu!//
+    
+    cout<<" que desea hacer?"<<endl;
+    cout<<" 1 para ver e area, perimetro y diametro de un circulo"<<endl;
+    cout<<"2 para ver el perimetro, hipotenusa y altura de un traingulo rectangulo"<<endl;
+    cin>>n;
+    
+switch(n){
+    case 1 : 
+    int radio;
+    cout<<"DIGITE EL RADIO";
+    cin>> radio;
+    
+    circulo circulo(radio);    
+    cout<<"Area: " <<circulo.areac(radio)<<endl;
+    cout<<"Perimetro: " <<circulo.perimetro(radio)<<endl;
+    cout<<"Diameto: " <<circulo.diametro(radio)<<endl;
+    break;
+    
+    case 2: 
+    cout<<"hola"<<endl;
+    break;
+}
+
+    return 0;
+}
