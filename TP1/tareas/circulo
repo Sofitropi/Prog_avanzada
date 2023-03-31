@@ -1,10 +1,6 @@
 /******************************************************************************
-
-Welcome to GDB Online.
-GDB online is an online compiler and debugger tool for C, C++, Python, Java, PHP, Ruby, Perl,
-C#, OCaml, VB, Swift, Pascal, Fortran, Haskell, Objective-C, Assembly, HTML, CSS, JS, SQLite, Prolog.
-Code, Compile, Run and Debug online from anywhere in world.
-
+Autor : Sofia Carvajal 
+Circulo radio
 *******************************************************************************/
 #include <iostream>
 
@@ -46,15 +42,8 @@ class Triangulo{
 
 int main()
 {
-    int n; //variable para entrar al menu!//
     
-    cout<<" que desea hacer?"<<endl;
-    cout<<" 1 para ver e area, perimetro y diametro de un circulo"<<endl;
-    cout<<"2 para ver el perimetro, hipotenusa y altura de un traingulo rectangulo"<<endl;
-    cin>>n;
-    
-switch(n){
-    case 1 : 
+
     int radio;
     cout<<"DIGITE EL RADIO";
     cin>> radio;
@@ -64,11 +53,7 @@ switch(n){
     cout<<"Perimetro: " <<circulo.perimetro(radio)<<endl;
     cout<<"Diameto: " <<circulo.diametro(radio)<<endl;
     break;
-    
-    case 2: 
-    cout<<"hola"<<endl;
-    break;
-}
+
 
     return 0;
 }
