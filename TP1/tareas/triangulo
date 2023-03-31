@@ -1,0 +1,55 @@
+#include <iostream>
+#include <cmath>
+#include <math.h>
+
+using namespace std;
+
+class triangulo{
+    
+    int base;
+    int altura;
+
+    
+    public:
+    triangulo ( int base, int altura){
+    this->base=base;
+    this->altura=altura;
+    }
+    
+    int area(){
+        int a;
+        a= (base*altura)/2;
+        
+        return a;
+    }
+    int hipotenusa(){
+        int h;
+        h=sqrt (pow(base,2)+pow(altura,2));
+        return h;
+    }
+
+    
+};
+
+
+
+int main()
+{
+    
+    int altura;
+    int base;
+    cout<<"DIGITE LA ALTURA DE SU TRIANGULO";
+    cin>> altura;
+    
+    cout<<"DIGITE LA BASE DE SU TRIANGULO";
+    cin>> base;
+    
+    triangulo triangulo (base, altura)  ;
+    cout<<"Area: " <<triangulo.area()<<endl;
+    cout<<"Hipotenusa: " <<triangulo.hipotenusa()<<endl;
+   
+
+
+
+    return 0;
+}
