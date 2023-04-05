@@ -1,0 +1,76 @@
+#include <iostream>
+#include <cstring> // Utilizar la función strcpy()
+
+using namespace std;
+
+class Persona {
+    
+protected:
+    char nombre[100];
+    
+public:
+    
+    Persona(char nombre[]) {
+        strcpy(this->nombre, nombre); // this para apuntar a la caracteristica general
+    }
+    
+    
+    void presentarse() {
+        cout << "Hola mi nombre es:  " << nombre << endl;
+    }
+};
+
+class Profesor: public Persona {  // hereda de la clase persona 
+    // Propiedad unica de la clase profesor 
+    char ensena[50];  
+    
+public:
+    
+    Profesor(char nombre[], char ensena[]): Persona(nombre) {
+        strcpy(this->ensena, ensena); 
+        
+    }  
+    void presentarse() {
+        cout << "Hola mi nombre es: " << nombre << " y dicto:  " << ensena << endl;
+    }
+};
+
+class Estudiante: public Persona { // Hereda de la calse madre PERSONA
+    // Propiedad solo de estudiante 
+    int grado;
+    
+public:
+    
+    Estudiante(char nombre[], int grado): Persona(nombre) {
+        this->grado = grado;
+    }
+    
+  
+    void presentarse() {
+        cout << "Hola mi nombre es: " << nombre << " y estoy en " << grado << "° grado" << endl;
+    }
+    
+    bool puedeCursarProgramacion() {  //Tipo bool para saber si SI o NO puede hacer el curso 
+        return this->grado > 9;
+    }
+};
+
+int main() {
+    // Se crea un objeto de cada clase
+    Persona* persona = new Persona(strdup("Juanes"));
+Profesor* profesor = new Profesor(strdup("Annika"), strdup("Calculo"));
+Estudiante* estudiante = new Estudiante(strdup("Pablito"), 10);
+
+    // Se invocan los métodos correspondientes y se muestra su resultado en pantalla
+    persona->presentarse();
+    profesor->presentarse();
+    estudiante->presentarse();
+    
+    if (estudiante->puedeCursarProgramacion()) {
+        cout << "Al estar por encima de 9° , Pablito puede cursar programación." << endl;
+    } else {
+        cout << "Pablito no puede cursar programación." << endl;
+    }
+    
+    return 0;
+}
