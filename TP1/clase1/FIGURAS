@@ -21,7 +21,7 @@ public class hola {
     
     class Rectangulo extends Figura{
         Rectangulo (double a, double b){
-            super(a,b);
+            super(a,b); //CONSTRUCTOR DE LA CLASE MADRE
         }
         Double area(){
             System.out.println("Area dentro de rectangulo");
