@@ -1,0 +1,61 @@
+#include <iostream>
+#include <cmath>
+#include <math.h>
+
+using namespace std;
+
+class triangulo{
+    
+    int base;
+    int altura;
+
+    
+    public:
+    triangulo ( int base, int altura){
+    this->base=base;
+    this->altura=altura;
+    }
+    
+    int perimetro(){
+        int p;
+        p= sqrt (base*altura + base*altura);
+        
+        return base+altura+p;
+    }
+    int hipotenusa(){
+        int h;
+        h=sqrt (pow(base,2)+pow(altura,2));
+        return h;
+    }
+    
+    int alt(){
+       int alt;
+       int hipo;
+       hipo=sqrt (base*base + altura*altura);
+       alt= sqrt(hipo*hipo-base*base);
+       return alt;
+    }
+
+    
+};
+
+
+
+int main()
+{
+    
+    int altura;
+    int base;
+    cout<<"DIGITE LA ALTURA DE SU TRIANGULO";
+    cin>> altura;
+    
+    cout<<"DIGITE LA BASE DE SU TRIANGULO";
+    cin>> base;
+    
+    triangulo triangulo (base, altura)  ;
+    cout<<"Perimetro: " <<triangulo.perimetro()<<endl;
+    cout<<"Hipotenusa: " <<triangulo.hipotenusa()<<endl;
+    cout<< "Altura: "<<triangulo.alt()<<endl;
+
+    return 0;
+}
