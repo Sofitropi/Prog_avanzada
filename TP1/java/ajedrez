@@ -1,0 +1,100 @@
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
+
+class JugadorAjedrez {
+    private String nombre;
+    private int elo;
+    private int edad;
+    private int valorPremio;
+
+    public JugadorAjedrez(String nombre, int elo, int edad, int valorPremio) {
+        this.nombre = nombre;
+        this.elo = elo;
+        this.edad = edad;
+        this.valorPremio = valorPremio;
+    }
+
+    // Getters y Setters para los atributos
+
+    public String getNombre() {
+        return nombre;
+    }
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+
+    public int getElo() {
+        return elo;
+    }
+
+    public void setElo(int elo) {
+        this.elo = elo;
+    }
+
+    public int getEdad() {
+        return edad;
+    }
+
+    public void setEdad(int edad) {
+        this.edad = edad;
+    }
+
+    public int getValorPremio() {
+        return valorPremio;
+    }
+
+    public void setValorPremio(int valorPremio) {
+        this.valorPremio = valorPremio;
+    }
+
+    // Método toString para representar el objeto como una cadena de texto
+
+    @Override
+    public String toString() {
+        return "Nombre: " + nombre + ", ELO: " + elo + ", Edad: " + edad + ", Valor Premio: " + valorPremio;
+    }
+}
+
+class JugadorComparator implements Comparator<JugadorAjedrez> {
+
+    // Enum para representar los criterios de ordenamiento
+    public enum CriterioOrdenamiento {
+        ELO, EDAD, VALOR_PREMIO
+    }
+
+    private CriterioOrdenamiento criterio;
+
+    public JugadorComparator(CriterioOrdenamiento criterio) {
+        this.criterio = criterio;
+    }
+
+    @Override
+    public int compare(JugadorAjedrez jugador1, JugadorAjedrez jugador2) {
+        switch (criterio) {
+            case ELO:
+                return jugador1.getElo() - jugador2.getElo();
+            case EDAD:
+                return jugador1.getEdad() - jugador2.getEdad();
+            case VALOR_PREMIO:
+                return jugador1.getValorPremio() - jugador2.getValorPremio();
+            default:
+                throw new IllegalArgumentException("Criterio de ordenamiento inválido");
+        }
+    }
+}
+
+public class Main {
+
+    public static void main(String[] args) {
+        // Creación de una lista de jugadores
+        ArrayList<JugadorAjedrez> listaJugadores = new ArrayList<>();
+        listaJugadores.add(new JugadorAjedrez("Jugador1", 1800, 25, 1000));
+        listaJugadores.add(new JugadorAjedrez("Jugador2", 2000, 28, 1500));
+        listaJugadores.add(new JugadorAjedrez("Jugador3", 2200, 22, 2000));
+        listaJugadores.add(new JugadorAjedrez("Jugador4", 1900, 30, 800));
+        listaJugadores.add(new JugadorAjedrez("Jugador5", 2100, 27, 1200));
+        listaJugadores.add(new JugadorAjedrez("Jugador6", 2300, 24, 2500));
+    }
+}
