@@ -1,1 +1,121 @@
+//Autor: sofia carvajal 
+Tema: 3 en linea o Tic Tac Toe :)
+Materia: Programacion avanzada//
 
+import java.util.Scanner;
+
+public class TicTacToe {
+    private static char[][] board;
+    private static char jugadorA;
+    
+    public static void main(String[] args) {
+        board = new char[3][3]; //se crea el tablero de juego
+        jugadorA = 'X'; 
+        
+        initializeBoard(); //le otorga vacios al tablero para poder comprobar cual esta llena y cual no :)
+        boolean gameFinished = false;
+        int totalMoves = 0;
+        
+        while (!gameFinished) { //mientras sea diferente de false se ejecutara que se juegue el juego 
+            printBoard(); // metodo de imprimir el tablero
+            int[] move = getPlayerMove(); //se iguala a la posicion movida en cada fila y cada columna , se pide en el metodo
+            
+            int fila = move[0]; 
+            int col = move[1];
+            
+            if (isValidMove(fila, col)) { //se comprueba si se puede hacer el movimiento o ya esta ocupada la celda 
+                makeMove(fila, col); //se pone la x o la o en la posicion ingresadad siempre y cuando sea valida 
+                totalMoves++; //Se suma al contador para despues comprobar si es un empate 
+                
+                if (checkWin(fila, col)) { //usando el metodo checkwin, se verifica si el jugador actual a ganado 
+                    printBoard();
+                    System.out.println("Jugador  " + jugadorA + " ganooo!");
+                    gameFinished = true;
+                } else if (totalMoves == 9) { // si ya se hicieron los 9 movimientos y no se ha obtenido ninguna victoria se concluye que es un empate :C
+                    printBoard();
+                    System.out.println("Empate -_-!");
+                    gameFinished = true;
+                } else { //se sigue jugando 
+                    jugadorA = (jugadorA == 'X') ? 'O' : 'X'; //se actualiza el jugador
+                }
+            } else {//si ValidMove comprueba que no es valido se le pide al usuario jugar otra vez 
+                System.out.println("Porfa ingresa un valor valido :)");
+            }
+        }
+    }
+    
+    private static void initializeBoard() { //se pone el tablero vacio 
+        for (int fila = 0; fila< 3; fila++) {
+            for (int col = 0; col < 3; col++) {
+                board[fila][col] = '-'; //por cada posicion se le asigna un - que ira cambiando respecto a lo que los jugadores ingresen 
+            }
+        }
+    }
+    
+    private static void printBoard() { //imprime el tablero 
+        System.out.println("Las filas tambien se toman como 0 1 y 2 ");
+        System.out.println("  columnas     ");
+        System.out.println(" 0    1    2");
+        
+        for (int fila = 0; fila < 3; fila++) {
+            System.out.print("| ");
+            for (int col = 0; col < 3; col++) {
+                System.out.print(board[fila][col] + " | ");
+            }
+            System.out.println("\n_____________");
+        }
+    }
+  
+    
+    private static int[] getPlayerMove() { //metodo donde se le pide la fila y columna al jugador
+        Scanner scanner = new Scanner(System.in);
+        int[] move = new int[2];
+        
+        System.out.print("Jugador : " + jugadorA + ", ingrese fila (0-2): ");
+        move[0] = scanner.nextInt();
+        
+        System.out.print("Jugador : " + jugadorA + ", ingrese columna (0-2): ");
+        move[1] = scanner.nextInt();
+        
+        return move;
+    }
+    
+    private static boolean isValidMove(int fila, int col) { 
+        if (fila < 0 || fila >= 3 || col < 0 || col >= 3) { //se verifica si los valores ingresados estan dentro del tablero 
+            return false;
+        }
+        
+        return board[fila][col] == '-'; 
+    }
+    
+    private static void makeMove(int fila, int col) {
+        board[fila][col] = jugadorA; //para el jugador actual se hace el movimineto una vez comprobado 
+    }
+    
+    private static boolean checkWin(int fila, int col) {
+        // Verifica filas para cada jugador
+        if (board[fila][0] == jugadorA && board[fila][1] == jugadorA && board[fila][2] == jugadorA) {
+            return true;
+        }
+        
+        // Verifica columnas para cada jugador
+        if (board[0][col] == jugadorA && board[1][col] == jugadorA && board[2][col] == jugadorA) {
+            return true;
+        }
+        
+        // Verifica en diagonal para cada jugador cuando son iguales
+        if (fila == col) {
+            if (board[0][0] == jugadorA && board[1][1] == jugadorA && board[2][2] == jugadorA) {
+                return true;
+            }
+        }
+        // Verifica en diagonal para cada jugador cuando estan al revez 
+        if (fila + col == 2) {
+            if (board[0][2] == jugadorA && board[1][1] == jugadorA && board[2][0] == jugadorA) {
+                return true;
+            }
+        }
+        
+        return false;
+    }
+}
