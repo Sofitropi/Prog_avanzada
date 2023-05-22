@@ -16,7 +16,7 @@ public class Main {
       String splayerYMove = " "; 
       // Instructions 
       System.out.println("TicTacToe Game");
-       
+       // Tablero de juego 
       System.out.println("  a     b     c \n      |     |     \n"+"1  "+ gameBoard[I][a] + "  |  "+ gameBoard[I][b] +
       "  |  "+ gameBoard[I][c] +"  \n _____|_____|_____\n      |     |     \n2  "
       + gameBoard[II][a] + "  |  "+ gameBoard[II][b] +"  |  "+ gameBoard[II][c] +
@@ -27,12 +27,12 @@ public class Main {
       {
        
         // Players Turn 
-        playerXMove = getUserInputCol(userInput);
-        splayerYMove = getUserInputRow(userInput);
-        while (!gameBoard[uIntputIntoString(splayerYMove)][uIntputIntoString(playerXMove)].equals(" "))
+        playerXMove = getUserInputCol(userInput); //ingresa la columna que quiere 
+        splayerYMove = getUserInputRow(userInput); // ingresa la fila que quiere
+        while (!gameBoard[uIntputIntoString(splayerYMove)][uIntputIntoString(playerXMove)].equals(" "))// verifica la disponibilidad del espacio ingresado
         {
         System.out.println("Ya esta ocupada, vuelve a ingresarlo ");
-        playerXMove = getUserInputCol(userInput);
+        playerXMove = getUserInputCol(userInput); // Vuelve a pedir los datos
         splayerYMove = getUserInputRow(userInput); 
         }
         gameBoard[uIntputIntoString(splayerYMove)][uIntputIntoString(playerXMove)] = "o"; 
@@ -40,7 +40,7 @@ public class Main {
         // CPU Turn 
         if ( spaceInBoard(gameBoard) == true && !(gameEvaluation(gameBoard) == 1 || gameEvaluation(gameBoard) == -1) )
         {
-        gameBoard[bestMoveRow(gameBoard)][bestMoveCol(gameBoard)] = "x"; 
+        gameBoard[bestMoveRow(gameBoard)][bestMoveCol(gameBoard)] = "x"; // EValua el juego e imprime en la posicion 
         System.out.println("  a     b     c \n      |     |     \n"+"1  "+ gameBoard[I][a] + "  |  "+ gameBoard[I][b] +"  |  "+ gameBoard[I][c] +"  \n _____|_____|_____\n      |     |     \n2  "+ gameBoard[II][a] + "  |  "+ gameBoard[II][b] +"  |  "+ gameBoard[II][c] +"  \n _____|_____|_____\n      |     |     \n3  "+ gameBoard[III][a] +"  |  "+ gameBoard[III][b] +"  |  "+ gameBoard[III][c]+"  \n      |     |");
         }
       }
@@ -76,7 +76,7 @@ public class Main {
       
     }
 
-    static int gameEvaluation(String[][] game) 
+    static int gameEvaluation(String[][] game) // Se recorre todo el juego con for para saber como va el tablero
     {
     for (int row = 0; row < 3; row++)
     {
@@ -131,7 +131,7 @@ public class Main {
     return 0; 
     }
     
-    static boolean spaceInBoard(String[][] game)
+    static boolean spaceInBoard(String[][] game)// Se verifica que espacios aun no estan ocupados 
     {
       for (int x = 0; x < 3; x++)
       {
@@ -139,18 +139,18 @@ public class Main {
         {
           if (game[x][y].equals(" "))
           {
-            return true; 
+            return true;   //si noe stan ocupados
           }
         }
       }
-      return false; 
+      return false;  //si si estan ocupados
     }
   
     static int minimax(String[][] board, boolean maxPlayer) 
     {
       int score = gameEvaluation(board); 
 
-      if (score == 1)
+      if (score == 1) //para saber si esta ocupado o no que es lo que hace gameEvaluation
       {
       return score;
       }
